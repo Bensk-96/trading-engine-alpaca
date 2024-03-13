@@ -33,3 +33,4 @@ https://forum.alpaca.markets/t/alpaca-data-center-locations/5640
   - Create SystemMonitoring class to monitor latency 
   - create an event driven architecture and Strategty Abstract Base Class(ABC). It can trigger trading logic once new market data comes
   - Create UI
+  - Inlcude option and cryptocurrency trading functions
