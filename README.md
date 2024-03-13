@@ -1,7 +1,7 @@
 # Trading Engine on Alpaca Broker
 
 ## Introduction
-- This project houses an trading engine designed for higher frequency trading environments(1 min).
+- This project houses an trading engine designed for medium frequency trading environments.
 - Utilizing Python's asynchronous capabilities and OOP, the engine efficiently processes market data, manages trade orders, and implements a sophisticated trading strategies
 - Example strategy is based on market regime identification through Hidden Markov Model
 
