@@ -1,0 +1,4 @@
+key.txt
+_pycache_
+.mypy_cache
+.ipynb_checkpoints
