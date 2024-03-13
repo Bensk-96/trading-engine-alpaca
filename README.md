@@ -1,36 +1,31 @@
 # Trading Engine on Alpaca Broker
 
 ## Introduction
-- This project houses an trading engine designed for medium frequency trading environments.
-- Utilizing Python's asynchronous capabilities and OOP, the engine efficiently processes market data, manages trade orders, and implements a sophisticated trading strategies
-- Example strategy is based on market regime identification through Hidden Markov Model
+This project presents a trading engine tailored for medium-frequency trading environments on Alpaca Broker(Why? It is comission free). Built with Python, it leverages asynchronous programming and object-oriented principles for efficient market data processing and trade order management. The engine is versatile, supporting sophisticated trading strategies like one demonstrated here, which uses a Hidden Markov Model for market regime identification.
 
 ## Key Components
-- DataClient class fetches and processing real-time market data(1-minute bar, trade and quote) and order updates via websocket. 
-- PositionManager class is responsible for managing and updating postiion information for different instrucments in the trading engine.
-- OrderManager handles execution and management of different trade orders. 
-- For more detail of the trading engine, check out the core file
-- The Strategy file consists of a the RegimeTrader class which is the example strategy to test the functionaility of the trading engine.
-- RegimeTrader collects minute bar data from the DataClient and calcualte features (log return and fractions of the bars).
-Hidden Markov Model is used to determine regime of the stock, it goes on long (short) in bull (bear) regime by submitting a limit price order around the mid-price, until the maximum allowed positions.
+- DataClient: Fetches and processes real-time market data, including 1-minute bars, trades, and quotes, alongside order updates via WebSocket.
+- PositionManager: Manages and updates position information for different instruments within the trading engine.
+- OrderManager: Handles the execution and management of diverse trade orders.
+- RegimeTrader (Strategy File): An example strategy that utilizes DataClient to gather minute bar data, calculate features (log returns, fractions of the bars), and determine market regime with a Hidden Markov Model, guiding long or short positions based on identified regimes.
+
+For more details, please refer to the core and strategy files in the repository.
 
 ![image](https://github.com/Bensk-96/trading-engine-alpaca/assets/91371262/9f81be98-e262-4421-8c56-8757737a1f0a)
 
 ## Latency Analysis
-- The order reponse time of Alpaca Broker is around 200ms for equity.
-- Alpaca's data server is in New York while their account server is in North Virginia, this results in a network latency around 20ms(included in Alpaca Sever's response time?). 
+- Broker Response Time: Approximately 200ms for equity orders with Alpaca Broker.
+- Network Latency: Due to data and account server locations, there's an inherent network latency (estimated at around 20ms).
 https://forum.alpaca.markets/t/alpaca-data-center-locations/5640
-- Deploying the trading algorithm in AWS in North Virginia(us-east-1) or Google Cloud(us-east4), the latency the trading application and Alpaca can be reduced to 10ms(?).
-- The internel latency of the trading engine depends on the complexity of the trading logic(say 20ms for the HMM Strategy)
-- The round trip time (time form receive market data -> strategy -> submit order -> receive response from Alpaca) will not be less than 250ms
+- Deployment Suggestion: Using AWS in North Virginia or Google Cloud in us-east4 can potentially reduce application-server latency to around 10ms.
+- Internal Latency: Depends on strategy complexity (e.g., < 20ms for the HMM Strategy).
+- Round Trip Time: Minimum expected is around 250ms from market data receipt to order response.
 
 ## Improvement in the Future
-- Modify the Credentials class - load KEY_ID and SECRET_KEY from .env by Python Decouple, this will replace the usage of key.txt
-- Set max number of order id to be saved in the OrderManager class
-- Add replace_order, cancel_order and cancel_all_orders methos in OrderMaanger class
-- Create AmendOrderResponse and CancelOrderReponse classes
-- Create RiskManger class
-- Create SystemMonitoring class to monitor latency 
-- create an event driven architecture and Strategty Abstract Base Class(ABC). 
-- Create UI
-- Inlcude option and cryptocurrency trading functions
+- Modify Credentials class for more secure key management(e.g. load credentials from .env)
+- Implement limits on stored order IDs in OrderManager.
+- Add order amendment and cancellation functionalities.
+- Develop RiskManager and SystemMonitoring classes for risk oversight and latency monitoring.
+- Transition to an event-driven architecture with a Strategy Abstract Base Class (ABC).
+- Introduce a user interface.
+- Expand capabilities to include options and cryptocurrency trading.
