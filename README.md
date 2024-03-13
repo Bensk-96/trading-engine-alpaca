@@ -24,7 +24,7 @@ https://forum.alpaca.markets/t/alpaca-data-center-locations/5640
 - The internel latency of the trading engine depends on the complexity of the trading logic(say 20ms for the HMM Strategy)
 - The round trip time (time form receive market data -> strategy -> submit order -> receive response from Alpaca) will not be less than 250ms
 
-  ## Planned Improvement
+  ## Improvement in the Future
   - Modify the Credentials class - load KEY_ID and SECRET_KEY from .env by Python Decouple, this will replace the usage of key.txt
   - Set max number of order id to be saved in the OrderManager class
   - Add replace_order, cancel_order and cancel_all_orders methos in OrderMaanger class
