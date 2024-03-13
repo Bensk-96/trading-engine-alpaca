@@ -31,6 +31,6 @@ https://forum.alpaca.markets/t/alpaca-data-center-locations/5640
 - Create AmendOrderResponse and CancelOrderReponse classes
 - Create RiskManger class
 - Create SystemMonitoring class to monitor latency 
-- create an event driven architecture and Strategty Abstract Base Class(ABC). It can trigger trading logic once new market data comes
+- create an event driven architecture and Strategty Abstract Base Class(ABC). 
 - Create UI
 - Inlcude option and cryptocurrency trading functions
