@@ -26,6 +26,6 @@ https://forum.alpaca.markets/t/alpaca-data-center-locations/5640
 - Implement limits on stored order IDs in OrderManager.
 - Add order amendment and cancellation functionalities.
 - Develop RiskManager and SystemMonitoring classes for risk oversight and latency monitoring.
-- Transition to an event-driven architecture with a Strategy Abstract Base Class (ABC).
+- Transition to an event-driven architecture with a Strategy Abstract Base Class (ABC) and EventHandler class.
 - Introduce a user interface.
 - Expand capabilities to include options and cryptocurrency trading.
