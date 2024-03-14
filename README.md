@@ -13,7 +13,7 @@ For more details, please refer to the core and strategy files in the repository.
 
 ![image](https://github.com/Bensk-96/trading-engine-alpaca/assets/91371262/9f81be98-e262-4421-8c56-8757737a1f0a)
 
-## Latency Analysis
+## Thoughts on Latency 
 - Broker Response Time: Approximately 200ms for equity orders with Alpaca Broker.
 - Network Latency: Due to data and account server locations, there's an inherent network latency (estimated at around 20ms).
 https://forum.alpaca.markets/t/alpaca-data-center-locations/5640
