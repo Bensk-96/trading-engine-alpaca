@@ -1,4 +1,4 @@
-# Trading Engine on Alpaca Broker
+# Machine Leaerning Driven Trading System on Alpaca Broker
 
 ## Introduction
 This project presents a trading system tailored for medium-frequency trading environments on Alpaca Broker(Why Alpaca? It is comission free). Built with Python, it leverages asynchronous programming and object-oriented principles for efficient market data processing and trade order management. The engine is versatile, supporting sophisticated trading strategies like one demonstrated here, which uses a Hidden Markov Model for market trend identification.
